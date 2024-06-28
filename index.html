@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path finder</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="style/utility.css">
+
+</head>
+
+<body>
+
+    <div class="tutorial" id="tutorial">
+        <div class="card">
+            <div class="upper">
+                
+                <div class="slide">
+                    
+                        <h4>what is Algo Visuals</h4>
+                        <p>It helps you see how path finding find the most efficient
+                        route between source to target on a grid. </p>
+                    
+                    
+                </div>
+
+                <div class="slide">
+                    <h4>How does it work</h4>
+                    <p>
+                        You can set start and end points, create mazes, choose algorithms, and watch the process in
+                        action. 
+                        It's a fun and visual way to understand how different strategies navigate through obstacles to
+                        find the shortest path.
+                    </p>
+                </div>
+
+                
+                <div class="slide">
+                    <h4>Adjust source/target</h4>
+                    <p>
+                        Click and drag the source/target marker to where you want it on the grid.
+                    </p>
+                </div>
+
+                
+                <div class="slide">
+                    <h4>Draw walls/obstacles</h4>
+                    <p>
+                        Use the 'Draw Wall' option to mark obstacles on the grid.Simply click and drag to create walls and define the layout.
+                    </p>
+                </div>
+
+                
+                <div class="slide">
+                    <h4>generate maze</h4>
+                    <p>
+                        It's time to give your pathfinding algorithm a brainstorm!
+                        Just click Generate Maze and watch the algorithm's creativity.
+                    </p>
+                </div>
+
+                
+                <div class="slide">
+                    <h4>Select Pixel Size</h4>
+                    <p>
+                        It allow you to increase or decrease the cells in the grid
+                        helps you to get wider range in small devices, like mobile phone
+                    </p>
+                </div>
+
+                
+                <div class="slide">
+                    <h4>Adjust the speed</h4>
+                    <p>
+                        Adjust the speed of the searching to follow the algorithm's progress
+                        closely.
+                    </p>
+                </div>
+
+                
+                <div class="slide">
+                    <h4>Select Algorithm</h4>
+                    <p>
+                        Pick one... from various pathfinding algorithms. Each has its unique way
+                        of finding the shortest path.
+                    </p>
+                </div>
+
+                
+                <div class="slide">
+                    <h4>click on visualize btn</h4>
+                    <p>
+                        click the visualize btn and boom !
+                        enjoy the process
+                    </p>
+                </div>
+
+
+            </div>
+
+            <div class="dots">
+
+            </div>
+
+            <div class="bottom">
+                <div class="left">
+                    <div class="btn" id="skip">skip tutorial</div>
+                </div>
+                <div class="right">
+                    <div id="prev" class="btn unactive">previous</div>
+                    <div id="next" class="btn">next</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="template">
+
+    
+        <header>
+
+            <nav>
+                <div class="algoVisuals">
+                    <a id="logo" href="./index.html">Algorithms Visualizer</a>
+                    <div class="tutorial-toggle"></div>
+                </div>
+                
+                <button id="visualize" class="btn">Visualize</button>
+
+                <ul class="nav-menu">
+                    <li>
+                        <a id="clear-path" href="#">Clear path</a>
+                    </li>
+                    <li>
+                        <a id="clear-board" href="#">Clear board</a>
+                    </li>
+                    <li id="maze" class="drop-box">
+                        <a id="generate-maze" href="#">Generate Maze</a>
+                        
+                    </li>
+
+                    <li id="pixel" class="drop-box">
+                        <a class="drop-toggle" href="#">Pixel<span class="carret"></span></a>
+                        <ul class="drop-menu">
+                            <li><a href="#">14px</a></li>
+                            <li><a href="#">16px</a></li>
+                            <li><a href="#">18px</a></li>
+                            <li><a href="#">20px</a></li>
+                            <li><a href="#" class="active">22px</a></li>
+                            <li><a href="#">24px</a></li>
+                            <li><a href="#">26px</a></li>
+                        </ul>
+                    </li>
+
+                    <li id="speed" class="drop-box">
+                        <a class="drop-toggle" href="#">Speed<span class="carret"></span></a>
+                        <ul class="drop-menu">
+                            <li><a href="#">Slow</a></li>
+                            <li><a href="#" class="active">Normal</a></li>
+                            <li><a href="#">Fast</a></li>
+                        </ul>
+                    </li>
+
+                    <li id="algo" class="drop-box">
+                        <a class="drop-toggle" href="#">Algorithms <span class="carret"></span></a>
+                        <ul class="drop-menu">
+                            <li><a href="#">A* Algorithm</a></li>
+                            <li><a href="#">Dijkstra's Algorithm</a></li>
+                            <li><a href="#">Greedy Best-first Search</a></li>
+                            <li><a href="#">BFS</a></li>
+                            <li>
+                                <a href="#">DFS</a>
+                            </li>
+                        </ul>   
+                    </li>
+
+
+                </ul>
+
+            </nav>
+
+
+            <ul class="guide">
+                <li>
+                    <div class="symbol source"></div>
+                    <div class="text">Start Node</div>
+                </li>
+
+                <li>
+                    <div class="symbol target"></div>
+                    <div class="text">Target Node</div>
+                </li>
+
+                <li>
+                    <div class="symbol unvisited"></div>
+                    <div class="text"> Unvisited node</div>
+                </li>
+
+                <li>
+                    <div class="symbol visited"></div>
+                    <div class="text">visited node</div>
+                </li>
+
+                <li>
+                    <div class="symbol wall"></div>
+                    <div class="text">wall node</div>
+                </li>
+
+                <li>
+                    <div class="symbol path"></div>
+                    <div class="text">Shortest-Path Node</div>
+                </li>
+
+                
+            </ul>
+
+            <div class="guide-toggle">
+                <img src="assets/icon/angle-double-down.svg" alt="">
+            </div>
+        </header>
+
+        <div id="board"></div>
+        <div id="info-box" class="info-box hidden">
+            <p id="duration">Duration: <span id="duration-value">0</span> ms</p>
+            <p id="path-length">Path Length: <span id="path-length-value">0</span></p>
+        </div>
+        
+        
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>
