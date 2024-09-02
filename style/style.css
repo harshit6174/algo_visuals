@@ -301,9 +301,9 @@ nav {
 #board {
     touch-action: none;
     
-    width: 75vw; /* Adjust the width as needed */
-    height: 70vh; /* Adjust the height as needed */
-    margin: 0 auto; /* Center the board horizontally */
+    width: 75vw; 
+    height: 70vh; 
+    margin: 0 auto; 
     border: 1px solid var(black);
     
 }
@@ -429,7 +429,7 @@ nav {
     padding: 10px;
     border-radius: 5px;
     z-index: 1000;
-    display: none; /* Hide by default */
+    display: none; 
 }
     
 .hidden {
